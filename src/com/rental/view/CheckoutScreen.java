@@ -83,14 +83,14 @@ public class CheckoutScreen {
 			} while (!validRentalDays);
 			//Discount percent
 			boolean validDiscountPercent = true;
-			int dsicountPrecent = 0;
+			int discountPrecent = 0;
 			do {
 				validDiscountPercent = true;
 				try {
-					System.out.println("Enter dsicount perecent: ");
-					dsicountPrecent = sc.nextInt();
-					if (dsicountPrecent < 0 || dsicountPrecent > 100) {
-						throw new MyException(dsicountPrecent
+					System.out.println("Enter discount perecent: ");
+					discountPrecent = sc.nextInt();
+					if (discountPrecent < 0 || discountPrecent > 100) {
+						throw new MyException(discountPrecent
 								+ " is not valid number; Discount perecent must be number between 0-100.");
 					}
 
@@ -103,7 +103,7 @@ public class CheckoutScreen {
 
 
 			try {
-				checkout.applayCharges(tool, rentalDays, dsicountPrecent, checkoutDate);
+				checkout.applayCharges(tool, rentalDays, discountPrecent, checkoutDate);
 			} catch (ParseException e) {
 				e.printStackTrace();
 			}
